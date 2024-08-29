@@ -1,9 +1,9 @@
-title: Nighthawk Pages 
-description: "Class of 2025"
-owner_name: John Mortensen
-github_username: nighthawkcoders
-github_repo: "student_2025" 
-baseurl: "/student_2025"
+title: Pranav CSP
+description: "Pranav's CS Portfolio"
+owner_name: Pranav Santhosh
+github_username: SanPranav
+github_repo: "Pranav_2025" 
+baseurl: "/Pranav_2025"
 future: true
 remote_theme: jekyll/minima
 minima:
@@ -23,4 +23,5 @@ header_pages:
   - navigation/blog.md
   - navigation/search.md
   - navigation/about.md
+  - navigation/my_journey.md
   - README4YML.md
