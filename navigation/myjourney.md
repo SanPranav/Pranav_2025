@@ -1,7 +1,7 @@
 ---
 layout: page
 title: My Journey
-permalink: /my_Journey/
+permalink: /myjourney/
 ---
 
 ## Cloning the Student Repository
