@@ -1,15 +1,71 @@
-{%- include head.html -%}
-
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% seo %}
+  {% include custom-head.html %}
+</head>
 <body>
 
-  {%- include header.html -%}
-
   <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      {{ content }}
-    </div>
+    <style>
+      header {
+        background-color: #480606;
+        color: #000000; /* Black text color */
+        box-shadow: 0 4px 8px rgba(83, 8, 8, 0.5); /* White box shadow */
+        padding: 1em;
+        text-align: center;
+        position: relative; /* Ensure header is positioned relative to the nav */
+        z-index: 1; /* Ensure header is below the nav */
+      }
+      .site-nav {
+        background-color: #480606;
+        color: #000000; /* Black text color */
+        box-shadow: 0 4px 8px rgba(128, 14, 14, 0.5); /* White box shadow */
+        padding: 1em;
+        text-align: center;
+        position: absolute; /* Position nav absolutely */
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+        width: 100%; /* Full width */
+        z-index: 2; /* Ensure nav is above the header */
+      }
+      .site-nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      .site-nav ul li {
+        display: inline;
+        margin-right: 15px;
+      }
+      .site-nav ul li a {
+        color: #000000; /* Black link color */
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .site-nav ul li a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="{{ site.baseurl }}/">Home</a></li>
+    <li><a href="{{ site.baseurl }}/about">About</a></li>
+    <li><a href="{{ site.baseurl }}/myjourney">My Journey</a></li>
+    <li><a href="{{ site.baseurl }}/search">Search</a></li>
+  </ul>
+</nav>
+
+    {{ content }}
   </main>
 
-  {%- include footer.html -%}
-
+  <footer>
+    <!-- Add footer content here -->
+  </footer>
 </body>
+</html>
