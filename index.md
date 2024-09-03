@@ -167,25 +167,35 @@ image: /images/mario_animation.png
     }
   });
 
-  //stop animation on window blur
+    // Stop Mario's animation when the window loses focus
   window.addEventListener("blur", () => {
-    mario.stopAnimate();
+    if (mario) {
+      mario.stopAnimate();
+    }
   });
 
-  //start animation on window focus
+  // Start Mario's flipping animation when the window gains focus
   window.addEventListener("focus", () => {
-     mario.startFlipping();
+    if (mario) {
+      mario.startFlipping();
+    }
   });
 
-  //start animation on page load or page refresh
+  // Start Mario's resting animation on page load or refresh
   document.addEventListener("DOMContentLoaded", () => {
-    // adjust sprite size for high pixel density devices
+    // Adjust sprite size for high pixel density devices
     const scale = window.devicePixelRatio;
     const sprite = document.querySelector(".sprite");
-    sprite.style.transform = `scale(${0.2 * scale})`;
-    mario.startResting();
-  });
 
+    if (sprite) {
+      sprite.style.transform = `scale(${0.2 * scale})`;
+    }
+
+    if (mario) {
+      mario.startResting();
+    }
+  });
+  
 </script>
 
 <div style="text-align: center; margin-top: 50px;">
