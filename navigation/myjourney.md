@@ -3,6 +3,17 @@ layout: page
 title: My Journey
 permalink: /myjourney/
 ---
+## Setting Up WSL and Ubuntu
+
+Before I could clone the student repository, I needed to set up my development environment. Since I am using a Windows machine, I decided to use Windows Subsystem for Linux (WSL) along with Ubuntu. This setup provides a powerful and flexible environment for development.
+
+### Installing WSL
+
+To install WSL, I followed these steps:
+
+1. **Enable WSL**: Open PowerShell as an administrator and run the following command:
+   ```powershell
+   wsl --install```
 
 ## Cloning the Student Repository
 
@@ -16,7 +27,7 @@ Having already taken CSSE 1 and CSSE 2, I was familiar with using the terminal, 
 
 - To create a new directory, I used the `mkdir` command:
   ```bash
-  mkdir my_project
+  mkdir my_project```
 
   To list the contents of a directory, I used the ls command:
   ls
@@ -26,18 +37,18 @@ Having already taken CSSE 1 and CSSE 2, I was familiar with using the terminal, 
 
 ## Activating the Virtual Enviornment
 To ensure that all dependencies are managed properly, I created and activated a virtual environment using the following commands:
-python3 -m venv venv
-source venv/bin/activate
+```python3 -m venv venv
+source venv/bin/activate```
 
 ## Setting Up Ruby and Installing Gems
 For the project, I needed Ruby and several gems. I installed Ruby using a version manager and then installed the required gems:
 
 # Install Ruby using a version manager like rbenv or rvm
-rbenv install 2.7.2
-rbenv global 2.7.2
+```rbenv install 2.7.2
+rbenv global 2.7.2```
 
 # Install bundler and other necessary gems
-gem install bundler
-bundle install
+```gem install bundler
+bundle install```
 
 By setting up the virtual environment and Ruby, I ensured that my development environment was isolated and had all the necessary dependencies. This setup allowed me to focus on coding without worrying about compatibility issues.
