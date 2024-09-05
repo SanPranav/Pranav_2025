@@ -211,21 +211,19 @@ image: /images/mario_animation.png
 <p>My interest in coding started at a young age, and I have been pursuing it ever since. I have already completed CSSE 1 and CSSE 2, which have provided me with a strong foundation in computer science. These courses have made it easier for me to navigate through more advanced topics and projects.</p>
 <p>In order to further my knowledge and skills, I have enrolled in the CS SE Class. I am excited to continue my journey in computer science and look forward to the challenges and opportunities that lie ahead.</p>
 <p>Stay tuned for updates and insights into my progress and experiences as I explore the world of computer science and software engineering.</p>
+<div style="border: 1px solid #ff4c4c; padding: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
+  <p>Click the button below to login:</p>
+  <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Login</button>
+  <br>
 </div>
-<div style="margin-top: 50px; display: flex; justify-content: center; align-items: center;">
-  <div style="display: flex; justify-content: center; align-items: center;">
-    <div style="text-align: center; color: #ffffff;">
-      <div style="display: flex; gap: 20px;">
-        <a href="login/" style="text-decoration: none;">
-          <button style="width: 150px; height: 50px; font-size: 1em; color: #ffffff; background-color: #ffcccc; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);">Login</button>
-        </a>
-        <a href="coding-languages/" style="text-decoration: none;">
-          <button style="width: 150px; height: 50px; font-size: 1em; color: #ffffff; background-color: #ffcccc; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);">Coding Languages</button>
-        </a>
-        <a href="button3/" style="text-decoration: none;">
-          <button style="width: 150px; height: 50px; font-size: 1em; color: #ffffff; background-color: #ffcccc; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);">Button 3</button>
-        </a>
-      </div>
-    </div>
-  </div>
+<div style="border: 1px solid #ff4c4c; padding: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
+  <p>Click the button below to learn more about me:</p>
+  <a href="about/" style="text-decoration: none;">
+    <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">About Me</button>
+  </a>
+  <br>
+  <p>Click the button below to see the top 10 most popular video games:</p>
+  <a href="videogame/" style="text-decoration: none;">
+    <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Top 10 Most Popular Video Games</button>
+  </a>
 </div>
