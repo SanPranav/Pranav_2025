@@ -222,8 +222,8 @@ image: /images/mario_animation.png
     <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">About Me</button>
   </a>
   <br>
-  <p>Click the button below to see the top 10 most popular video games:</p>
-  <a href="videogame/" style="text-decoration: none;">
-    <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Top 10 Most Popular Video Games</button>
+  <p>Click here to access our Coding Languages Mini Project.:</p>
+  <a href="https://github.com/grouprepo_2025" style="text-decoration: none;">
+    <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Coding Languages</button>
   </a>
 </div>
