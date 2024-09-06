@@ -203,10 +203,24 @@ image: /images/mario_animation.png
   <h1 style="font-size: 3em; color: #e74c3c;">Welcome to My Journey</h1>
   <p style="font-size: 1.5em; color: #ffffff;">My journey starts here.</p>
   <div style="margin-top: 30px; font-size: 1.2em; color: #ffffff; max-width: 800px; margin: auto; text-align: left;">
-    <p>I come from a family of five, which includes my brother, mother, sister, father, and me. As the oldest child in my family, I take on a lot of responsibilities and strive to set a good example for my siblings.</p>
-    <p>My interest in coding started at a young age, and I have been pursuing it ever since. I have already completed CSSE 1 and CSSE 2, which have provided me with a strong foundation in computer science. These courses have made it easier for me to navigate through more advanced topics and projects.</p>
-    <p>In order to further my knowledge and skills, I have enrolled in the CSP Class. I am excited to continue my journey in computer science and look forward to the challenges and opportunities that lie ahead.</p>
-    <p>Stay tuned for updates and insights into my progress and experiences as I explore the world of computer science and software engineering.</p>
+    
+    <section id="family">
+        <h2>Family</h2>
+        <p>Family of five: brother, mother, sister, father, and me.</p>
+        <p>As the oldest, I take on responsibilities and set an example.</p>
+    </section>
+    <section id="coding-journey">
+        <h2>Coding Journey</h2>
+        <p>Started coding at a young age and have pursued it ever since.</p>
+        <p>Completed CSSE 1 and CSSE 2, building a strong foundation in computer science.</p>
+        <p>These courses helped me tackle advanced topics.</p>
+        <p>Currently enrolled in the CSP class to further my skills.</p>
+    </section>
+    <section id="goals">
+        <h2>Goals</h2>
+        <p>Excited for new challenges in computer science.</p>
+        <p>Stay tuned for updates on my progress and experiences.</p>
+    </section>
     <div style="border: 1px solid #ff4c4c; padding: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
       <p>Click the button below to login:</p>
       <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Login</button>
@@ -225,7 +239,6 @@ image: /images/mario_animation.png
     </div>
   </div>
 </div>
-
 <style>
   @media (max-width: 768px) {
     h1 {
