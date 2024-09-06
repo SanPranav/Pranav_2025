@@ -198,32 +198,44 @@ image: /images/mario_animation.png
   
 </script>
 
-<div style="text-align: center; margin-top: 50px;">
+<div style="position: relative; text-align: center; margin-top: 50px; max-height: 100vh; overflow-y: auto;">
+  <img src="{{site.baseurl}}/images/profile_picture.png" alt="Profile Picture" style="position: absolute; top: 10px; right: 10px; max-width: 100px; height: auto; border-radius: 50%; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
   <h1 style="font-size: 3em; color: #e74c3c;">Welcome to My Journey</h1>
   <p style="font-size: 1.5em; color: #ffffff;">My journey starts here.</p>
-  <div style="margin-top: 30px;">
-    <img src="{{site.baseurl}}/images/profile_picture.png" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+  <div style="margin-top: 30px; font-size: 1.2em; color: #ffffff; max-width: 800px; margin: auto; text-align: left;">
+    <p>I come from a family of five, which includes my brother, mother, sister, father, and me. As the oldest child in my family, I take on a lot of responsibilities and strive to set a good example for my siblings.</p>
+    <p>My interest in coding started at a young age, and I have been pursuing it ever since. I have already completed CSSE 1 and CSSE 2, which have provided me with a strong foundation in computer science. These courses have made it easier for me to navigate through more advanced topics and projects.</p>
+    <p>In order to further my knowledge and skills, I have enrolled in the CS SE Class. I am excited to continue my journey in computer science and look forward to the challenges and opportunities that lie ahead.</p>
+    <p>Stay tuned for updates and insights into my progress and experiences as I explore the world of computer science and software engineering.</p>
+    <div style="border: 1px solid #ff4c4c; padding: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
+      <p>Click the button below to login:</p>
+      <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Login</button>
+      <br>
+    </div>
+    <div style="border: 1px solid #ff4c4c; padding: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
+      <p>Click the button below to learn more about me:</p>
+      <a href="about/" style="text-decoration: none;">
+        <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">About Me</button>
+      </a>
+      <br>
+      <p>Click here to access our Coding Languages Mini Project:</p>
+      <a href="https://github.com/grouprepo_2025" style="text-decoration: none;">
+        <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Coding Languages</button>
+      </a>
+    </div>
   </div>
-  <div style="margin-top: 30px; font-size: 1.2em; color: #ffffff; max-width: 800px; margin: auto; text-align: left;">
 </div>
-  <div style="margin-top: 30px; font-size: 1.2em; color: #ffffff; max-width: 800px; margin: auto; text-align: left;">
-<p>I come from a family of five, which includes my brother, mother, sister, father, and me. As the oldest child in my family, I take on a lot of responsibilities and strive to set a good example for my siblings.</p>
-<p>My interest in coding started at a young age, and I have been pursuing it ever since. I have already completed CSSE 1 and CSSE 2, which have provided me with a strong foundation in computer science. These courses have made it easier for me to navigate through more advanced topics and projects.</p>
-<p>In order to further my knowledge and skills, I have enrolled in the CS SE Class. I am excited to continue my journey in computer science and look forward to the challenges and opportunities that lie ahead.</p>
-<p>Stay tuned for updates and insights into my progress and experiences as I explore the world of computer science and software engineering.</p>
-<div style="border: 1px solid #ff4c4c; padding: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
-  <p>Click the button below to login:</p>
-  <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Login</button>
-  <br>
-</div>
-<div style="border: 1px solid #ff4c4c; padding: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
-  <p>Click the button below to learn more about me:</p>
-  <a href="about/" style="text-decoration: none;">
-    <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">About Me</button>
-  </a>
-  <br>
-  <p>Click here to access our Coding Languages Mini Project.:</p>
-  <a href="https://github.com/grouprepo_2025" style="text-decoration: none;">
-    <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Coding Languages</button>
-  </a>
-</div>
+
+<style>
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.8em;
+    }
+    p {
+      font-size: 0.9em;
+    }
+    img {
+      max-width: 50px;
+    }
+  }
+</style>
