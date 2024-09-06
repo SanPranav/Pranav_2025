@@ -205,7 +205,7 @@ image: /images/mario_animation.png
   <div style="margin-top: 30px; font-size: 1.2em; color: #ffffff; max-width: 800px; margin: auto; text-align: left;">
     <p>I come from a family of five, which includes my brother, mother, sister, father, and me. As the oldest child in my family, I take on a lot of responsibilities and strive to set a good example for my siblings.</p>
     <p>My interest in coding started at a young age, and I have been pursuing it ever since. I have already completed CSSE 1 and CSSE 2, which have provided me with a strong foundation in computer science. These courses have made it easier for me to navigate through more advanced topics and projects.</p>
-    <p>In order to further my knowledge and skills, I have enrolled in the CS SE Class. I am excited to continue my journey in computer science and look forward to the challenges and opportunities that lie ahead.</p>
+    <p>In order to further my knowledge and skills, I have enrolled in the CSP Class. I am excited to continue my journey in computer science and look forward to the challenges and opportunities that lie ahead.</p>
     <p>Stay tuned for updates and insights into my progress and experiences as I explore the world of computer science and software engineering.</p>
     <div style="border: 1px solid #ff4c4c; padding: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
       <p>Click the button below to login:</p>
