@@ -233,7 +233,7 @@ image: /images/mario_animation.png
       </a>
       <br>
       <p>Click here to access our Coding Languages Mini Project:</p>
-      <a href="https://github.com/grouprepo_2025" style="text-decoration: none;">
+      <a href="https://cyberlord09.github.io/grouprepo_2025/" style="text-decoration: none;">
         <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Coding Languages</button>
       </a>
     </div>
