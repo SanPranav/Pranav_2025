@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Submenu</title>
+  <style>
+    .submenu {
+      width: 100%;
+      background-color: #333;
+      overflow: hidden;
+      border-radius: 10px; /* Rounded edges */
+      padding: 5px; /* Padding for compactness */
+      margin-bottom: 0; /* Reduce bottom margin */
+      box-shadow: 0 8px 16px rgb(80, 5, 5); /* Box shadow for the entire box */
+    }
+    .submenu-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .submenu-item {
+      flex: 1;
+      text-align: center;
+      padding: 5px;
+    }
+    .submenu a {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 8px 10px; /* Reduced padding for compactness */
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px; /* Smaller font size for compactness */
+      border-radius: 5px; /* Rounded edges for links */
+    }
+    .submenu a:hover {
+      background-color: #000000;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="submenu">
+    <div class="submenu-container">
+        <div class="submenu-item"><img src="/images/logo.png" height="40" title="Home" alt=""></div>
+        <div class="submenu-item"><a href="{{site.baseurl}}/2024/09/17/cookieclicker.html">Cookie Clicker</a></div>
+        <div class="submenu-item"><a href="{{site.baseurl}}/2024/09/15/flappybirdgame.html">Flappy Bird</a></div>
+        <div class="submenu-item"><a href="{{site.baseurl}}/2024/09/12/javascriptcalc.html">JS Calculator</a></div>
+        <div class="submenu-item"><a href="{{site.baseurl}}/2024/09/15/snakegame.html">Snake Game</a></div>
+    </div>
+  </div>
+</body>
+</html>
