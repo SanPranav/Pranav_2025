@@ -118,7 +118,7 @@ description: Cookie Clicker Game
         clickPower *= 4;
       }
       updateCookieCount();
-    }
+}
 
     // Auto Clicker function
     function autoClick() {
@@ -128,6 +128,34 @@ description: Cookie Clicker Game
 
     // Initial button state update
     updateButtonStates();
+  </script>
+
+  <style>
+    @keyframes expandShrink {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    #cookie.clicked {
+      animation: expandShrink 0.3s ease-in-out;
+    }
+  </style>
+
+  <script>
+    document.getElementById('cookie').addEventListener('click', function() {
+      cookieCount += clickPower;
+      document.getElementById('click-sound').play(); // Play click sound
+      updateCookieCount();
+
+      // Add the 'clicked' class to trigger the animation
+      this.classList.add('clicked');
+
+      // Remove the 'clicked' class after the animation ends
+      setTimeout(() => {
+        this.classList.remove('clicked');
+      }, 300); // Match the duration of the animation
+    });
   </script>
 </body>
 </html>
