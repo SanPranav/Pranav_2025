@@ -8,7 +8,6 @@ description: FlappyBird Game
 <br>
 <br>
 
-
 <style>
     body {
         text-align: center;
@@ -16,9 +15,9 @@ description: FlappyBird Game
 
     #board {
         /* background-color: skyblue; */
-        background-image: url("{{site.baseurl}}/flappybirdsrc/flappybirdbg.png")
+        background-image: url("{{site.baseurl}}/flappybirdsrc/flappybirdbg.png");
+        border-radius: 15px; /* Rounded edges */
     }
-
 </style>
 
 <!-- Audio -->
