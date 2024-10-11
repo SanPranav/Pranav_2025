@@ -31,18 +31,68 @@
   
     // Creates smooth animation effect
     transition: all 0.5s; 
-  }
-  
-  /* define class for redifined button */
-  .button {
-    @include button;
-  }
-  
+}
+
+// Custom styles for Jupyter Notebook code cells
+.jp-Cell.jp-CodeCell {
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+.jp-Cell.jp-CodeCell .jp-InputArea-editor {
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+.jp-Cell.jp-CodeCell .jp-OutputArea-output {
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+.jp-OutputArea-output {
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+.jp-RenderedHTMLCommon {
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+// Ensure all text is white
+body {
+  color: #ffffff; /* White text */
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span, div, li, td, th {
+  color: #ffffff; /* White text */
+}
+
+/* define class for redefined button */
+.button {
+  @include button;
+}
+
+/* styling for the calculator operation button */
+.calculator-operation {
+  @extend .button;
+}
+
+/* styling for the calculator clear button */
+.calculator-clear {
+  @extend .button;
+  background-color: #792f34;
+}
+
+/* styling for the calculator equals button */
+.calculator-equals {
+  @extend .button;
+  background-color: #e70f0f;
+}
    /* darkens the background color on hover to create a selecting effect */
   .button:hover {
     background-color: #373737;
   }
-  
   /* "row style" is flexible size and aligns pictures in center */
   .row {
     align-items: center;
