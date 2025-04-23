@@ -1,152 +1,110 @@
-// Comment in or Uncomment out the following themes to use them 
+// Uncomment the following themes to use them
 
 // Dark themes
-//@import "minima/leaf/_leaf";  //Leaf theme
-//@import "minima/hacker/jekyll-theme-hacker"; //Hacker theme 
+//@import "minima/leaf/_leaf";  // Leaf theme
+//@import "minima/hacker/jekyll-theme-hacker"; // Hacker theme
 //@import "minima/dracula/_dracula";
 
 // Light themes
-@import "minima/hamilton/main"; //Hamilton theme
-//@import "minima/monophase/main"; //Monophase theme 
-//@import "minima/minimal-mistakes/__minimal-mistakes"; //Minimal Mistakes theme 
-// Mix Light themes with this if your eyes are bleeding 
+@import "minima/hamilton/main"; // Hamilton theme
+//@import "minima/monophase/main"; // Monophase theme
+//@import "minima/minimal-mistakes/__minimal-mistakes"; // Minimal Mistakes theme
+// Mix Light themes with this if your eyes are bleeding
 @import "minima/dracula/dark-mode";
 
-// STYLING PREFERNCES for SITE
-// mixin used as a template for buttons
+// Styling preferences for the site
 @mixin button {
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    background-color: #21807c;
-    border: 3px solid black;
-    font-size: 1.5em;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    grid-column: span 1;
-    grid-row: span 1;
-  
-    // Creates smooth animation effect
-    transition: all 0.5s; 
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background-color: #21807c;
+  border: 3px solid black;
+  font-size: 1.5em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-column: span 1;
+  grid-row: span 1;
+
+  // Smooth animation effect
+  transition: all 0.5s;
 }
 
 // Custom styles for Jupyter Notebook code cells
-.jp-Cell.jp-CodeCell {
-  background-color: #000000; /* Black background */
-  color: #ffffff; /* White text */
-}
-
-.jp-Cell.jp-CodeCell .jp-InputArea-editor {
-  background-color: #000000; /* Black background */
-  color: #ffffff; /* White text */
-}
-
-.jp-Cell.jp-CodeCell .jp-OutputArea-output {
-  background-color: #000000; /* Black background */
-  color: #ffffff; /* White text */
-}
-
-.jp-OutputArea-output {
-  background-color: #000000; /* Black background */
-  color: #ffffff; /* White text */
-}
-
+.jp-Cell.jp-CodeCell,
+.jp-Cell.jp-CodeCell .jp-InputArea-editor,
+.jp-Cell.jp-CodeCell .jp-OutputArea-output,
+.jp-OutputArea-output,
 .jp-RenderedHTMLCommon {
   background-color: #000000; /* Black background */
   color: #ffffff; /* White text */
 }
 
 // Ensure all text is white
-body {
+body,
+h1, h2, h3, h4, h5, h6,
+p, a, span, div, li,
+td, th {
   color: #ffffff; /* White text */
 }
 
-h1, h2, h3, h4, h5, h6, p, a, span, div, li, td, th {
-  color: #ffffff; /* White text */
-}
-
-/* define class for redefined button */
+// Define class for reusable button styles
 .button {
   @include button;
 }
 
-/* styling for the calculator operation button */
-.calculator-operation {
+// Styling for calculator buttons
+.calculator-number,
+.calculator-operation,
+.calculator-clear,
+.calculator-equals {
   @extend .button;
 }
 
-/* styling for the calculator clear button */
 .calculator-clear {
-  @extend .button;
   background-color: #792f34;
 }
 
-/* styling for the calculator equals button */
 .calculator-equals {
-  @extend .button;
   background-color: #e70f0f;
 }
-   /* darkens the background color on hover to create a selecting effect */
-  .button:hover {
-    background-color: #373737;
-  }
-  /* "row style" is flexible size and aligns pictures in center */
-  .row {
-    align-items: center;
-    display: flex;
-  }
-  
-  /* "column style" is one-third of the width with padding */
-  .column {
-    flex: 16.66%;
-    padding: 3px;
+
+// Darken the background color on hover for a selection effect
+.button:hover {
+  background-color: #373737;
 }
 
-// STYLING FOR CALCULATOR
-/* class to create the calculator's container; uses CSS grid display to partition off buttons */
-.calculator-container { 
-  width: 90vw; /* this width and height is specified for mobile devices by default */
+// Row style: flexible size and center alignment
+.row {
+  align-items: center;
+  display: flex;
+}
+
+// Column style: one-third width with padding
+.column {
+  flex: 16.66%;
+  padding: 3px;
+}
+
+// Styling for the calculator container
+.calculator-container {
+  width: 90vw; /* Default width for mobile devices */
   height: 80vh;
   margin: 0 auto;
-  padding: 0 20px; /* Add padding to create indent on both sides */
+  padding: 0 20px; /* Indent on both sides */
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/ */
-  grid-template-rows: 0.5fr repeat(4, 1fr);
-  gap: 10px 10px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: 0.5fr repeat(4, 1fr); /* 5 rows */
+  gap: 10px;
 }
 
-@media (min-width: 600px) { 
+@media (min-width: 600px) {
   .calculator-container {
-    width: 40vw;
+    width: 40vw; /* Adjust width for larger screens */
     height: 80vh;
     padding: 0 40px; /* Adjust padding for larger screens */
   }
 }
-
-/* styling for the calculator number button */
-.calculator-number {
-  @extend .button;
-}
-  
-  /* styling for the calculator operation button */
-  .calculator-operation {
-    @extend .button;
-  }
-  
-  /* styling for the calculator clear button */
-  .calculator-clear {
-    @extend .button;
-    background-color: #792f34;
-  }
-  
-  /* styling for the calculator equals button */
-  .calculator-equals {
-    @extend .button;
-    background-color: #e70f0f;
-  }
-  
-  

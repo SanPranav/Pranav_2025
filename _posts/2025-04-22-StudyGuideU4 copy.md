@@ -6,6 +6,7 @@ permalink: /StudyG4
 title: Pranav's Study Guide - Unit 4
 categories: [Pranav Study Guide]
 ---
+{% include nav/study.html %}
 # AP Computer Science Principles (CSP) Study Guide - Unit 4
 
 ## BIG IDEA 4: COMPUTER SYSTEMS AND NETWORKS

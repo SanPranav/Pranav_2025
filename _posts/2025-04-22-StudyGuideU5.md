@@ -6,6 +6,8 @@ permalink: /StudyG5
 title: Pranav's Study Guide - Unit 5
 categories: [Pranav Study Guide]
 ---
+{% include nav/study.html %}
+
 # AP Computer Science Principles (CSP) Comprehensive Study Guide - Unit 5
 
 ## BIG IDEA 5: IMPACT OF COMPUTING
