@@ -6,7 +6,7 @@ permalink: /StudyG2
 title: Pranav's Study Guide - Unit 2
 categories: [Pranav Study Guide]
 ---
-
+{% include nav/study.html %}
 # AP Computer Science Principles (CSP) Study Guide - Unit 2
 
 ## BIG IDEA 2: DATA

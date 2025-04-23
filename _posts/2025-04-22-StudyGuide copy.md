@@ -6,7 +6,7 @@ permalink: /StudyG
 title: Pranav's Study Guide
 categories: [Pranav Study Guide]
 ---
-
+{% include nav/study.html %}
 # AP Computer Science Principles (CSP) Comprehensive Study Guide
 
 <html lang="en">

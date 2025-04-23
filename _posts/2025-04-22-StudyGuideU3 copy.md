@@ -6,6 +6,7 @@ permalink: /StudyG3
 title: Pranav's Study Guide - Unit 3
 categories: [Pranav Study Guide]
 ---
+{% include nav/study.html %}
 # AP Computer Science Principles (CSP) Study Guide - Unit 3
 
 ## BIG IDEA 3: ALGORITHMS AND PROGRAMMING
