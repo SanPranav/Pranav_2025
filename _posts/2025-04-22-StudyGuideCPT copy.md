@@ -45,16 +45,56 @@ I've reflected on my learning style for technical topics and identified that I l
   - Design decisions and alternatives considered
   - Program functionality and purpose
   - Code segments that demonstrate specific requirements
-
-### 5. Weekly Study Schedule
-| Day | Focus Area | Time | Activities |
-|-----|------------|------|------------|
-| Monday | Algorithm Review | 1 hour | Textbook reading, note-taking |
-| Tuesday | Practical Coding | 1.5 hours | Solve practice problems, implement algorithms |
-| Wednesday | Visual Learning | 1 hour | Watch tutorials, create diagrams |
-| Thursday | PPR Practice | 1 hour | Focus on pattern recognition exercises |
-| Friday | CPT Preparation | 1 hour | Written explanations, documentation practice |
-| Weekend | Comprehensive Review | 2 hours | Integrate concepts, identify gaps, adjust plan |
+  ```html
+  <h3>5. Weekly Study Schedule</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Focus Area</th>
+        <th>Time</th>
+        <th>Activities</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Monday</td>
+        <td>Algorithm Review</td>
+        <td>1 hour</td>
+        <td>Textbook reading, note-taking</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Practical Coding</td>
+        <td>1.5 hr</td>
+        <td>Solve practice problems, implement algorithms</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Visual Learning</td>
+        <td>1 hour</td>
+        <td>Watch tutorials, create diagrams</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>PPR Practice</td>
+        <td>1 hour</td>
+        <td>Focus on pattern recognition exercises</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>CPT Preparation</td>
+        <td>1 hour</td>
+        <td>Written explanations, documentation practice</td>
+      </tr>
+      <tr>
+        <td>Weekend</td>
+        <td>Comprehensive Review</td>
+        <td>2 hr</td>
+        <td>Integrate concepts, identify gaps, adjust plan</td>
+      </tr>
+    </tbody>
+  </table>
 
 ## Progress Tracking
 - Weekly self-assessment on key topics
