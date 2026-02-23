@@ -38,6 +38,12 @@
     </script>
 {% endif %}
 
+<!-- Mermaid diagrams -->
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true });
+</script>
+
 <script>
 /**
  * Function to wrap images with a figure and caption if they have a title attribute.
