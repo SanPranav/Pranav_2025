@@ -24,3 +24,5 @@ Ijava/
 !/.gitignore
 !/Makefile
 !/Gemfile
+!/_includes/
+!/images/
