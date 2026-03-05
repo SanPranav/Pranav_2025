@@ -156,9 +156,9 @@ image: /images/mario_animation.png
     event.preventDefault(); // prevent default browser action
     if (event.touches[0].clientX > window.innerWidth / 2) {
       // move right
-      if (currentSpeed === 0) { // if at rest, go to walking
+      if (mario.currentSpeed === 0) { // if at rest, go to walking
         mario.startWalking();
-      } else if (currentSpeed === 3) { // if walking, go to running
+      } else if (mario.currentSpeed === 3) { // if walking, go to running
         mario.startRunning();
       }
     } else {
@@ -198,57 +198,44 @@ image: /images/mario_animation.png
   
 </script>
 
-<div style="position: relative; text-align: center; margin-top: 50px; max-height: 100vh; overflow-y: auto;">
-  <img src="{{site.baseurl}}/images/profile_picture.png" alt="Profile Picture" style="position: absolute; top: 10px; right: 10px; max-width: 100px; height: auto; border-radius: 50%; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
-  <h1 style="font-size: 3em; color: #e74c3c;">Welcome to My Journey</h1>
-  <p style="font-size: 1.5em; color: #ffffff;">My journey starts here.</p>
-  <div style="margin-top: 30px; font-size: 1.2em; color: #ffffff; max-width: 800px; margin: auto; text-align: left;">
-    
-    <section id="family">
-        <h2>Family</h2>
-        <p>Family of five: brother, mother, sister, father, and me.</p>
-        <p>As the oldest, I take on responsibilities and set an example.</p>
+<section class="home-hero">
+  <img src="{{site.baseurl}}/images/profile_picture.png" alt="Profile Picture" class="home-profile-image">
+  <h1>Welcome to My Journey</h1>
+  <p class="home-subtitle">My journey starts here.</p>
+
+  <div class="home-grid">
+    <section class="home-card" id="family">
+      <h2>Family</h2>
+      <p>Family of five: brother, mother, sister, father, and me.</p>
+      <p>As the oldest, I take on responsibilities and set an example.</p>
     </section>
-    <section id="coding-journey">
-        <h2>Coding Journey</h2>
-        <p>Started coding at a young age and have pursued it ever since.</p>
-        <p>Completed CSSE 1 and CSSE 2, building a strong foundation in computer science.</p>
-        <p>These courses helped me tackle advanced topics.</p>
-        <p>Currently enrolled in the CSP class to further my skills.</p>
+
+    <section class="home-card" id="coding-journey">
+      <h2>Coding Journey</h2>
+      <p>Started coding at a young age and have pursued it ever since.</p>
+      <p>Completed CSSE 1 and CSSE 2, building a strong foundation in computer science.</p>
+      <p>These courses helped me tackle advanced topics.</p>
+      <p>Currently enrolled in the CSP class to further my skills.</p>
     </section>
-    <section id="goals">
-        <h2>Goals</h2>
-        <p>Excited for new challenges in computer science.</p>
-        <p>Stay tuned for updates on my progress and experiences.</p>
+
+    <section class="home-card" id="goals">
+      <h2>Goals</h2>
+      <p>Excited for new challenges in computer science.</p>
+      <p>Stay tuned for updates on my progress and experiences.</p>
     </section>
-    <div style="border: 1px solid #ff4c4c; padding: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
+  </div>
+
+  <div class="home-actions">
+    <div class="home-action-card">
       <p>Click the button below to login:</p>
-      <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Login</button>
-      <br>
+      <a class="button button-primary" href="{{ site.baseurl }}/myjourney">Login</a>
     </div>
-    <div style="border: 1px solid #ff4c4c; padding: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">
+
+    <div class="home-action-card">
       <p>Click the button below to learn more about me:</p>
-      <a href="about/" style="text-decoration: none;">
-        <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">About Me</button>
-      </a>
-      <br>
+      <a class="button button-primary" href="{{ site.baseurl }}/about/">About Me</a>
       <p>Click here to access our Coding Languages Mini Project:</p>
-      <a href="https://cyberlord09.github.io/grouprepo_2025/" style="text-decoration: none;">
-        <button style="background-color: #ff4c4c !important; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);">Coding Languages</button>
-      </a>
+      <a class="button button-secondary" href="https://cyberlord09.github.io/grouprepo_2025/">Coding Languages</a>
     </div>
   </div>
-</div>
-<style>
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 1.8em;
-    }
-    p {
-      font-size: 0.9em;
-    }
-    img {
-      max-width: 50px;
-    }
-  }
-</style>
+</section>
