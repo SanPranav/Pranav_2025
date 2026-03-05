@@ -1,10 +1,9 @@
 ---
-layout: post 
-search_exclude: true
-show_reading_time: false
-permalink: /pranavfeatureblog
-title: Pranav's Project Feature Blog
-categories: [Pranav Final Retrospective]
+comments: False
+layout: post
+title: Feature Reflection + Self Grade
+description: A self reflection on my experience for CSP tri 2.
+type: collab
 ---
 
 # **Code Palette: Key Features & Implementation**
@@ -441,3 +440,4 @@ The **Code Palette** project effectively demonstrates full-stack development pri
 | --------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
 | **Full Stack Project Demo**       | 2      | Demonstrate the project, highlight CPT requirements, and incorporate N@tM feedback. | 1.90          |
 | **Project Feature Blog Write-up** | 1      | Use CPT/FRQ language to write a structured blog post on project features.                                                                                        | 0.92       |
+
