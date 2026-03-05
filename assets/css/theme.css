@@ -1310,6 +1310,10 @@ html {
     right: -260px;
   }
 
+  .site-nav.active {
+    right: 0;
+  }
+
   .site-nav-list a {
     padding: 14px 18px;
     font-size: 0.95rem;
