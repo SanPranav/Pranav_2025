@@ -17,6 +17,12 @@
         <span class="site-brand-subtitle">{{ site.description }}</span>
       </a>
 
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
       <nav class="site-nav" aria-label="Primary navigation">
         <ul class="site-nav-list">
           <li><a href="{{ site.baseurl }}/">Home</a></li>
@@ -28,6 +34,8 @@
       </nav>
     </div>
   </header>
+  
+  <div class="mobile-nav-overlay"></div>
 
   <main id="main-content" class="page-content" aria-label="Content">
     {{ content }}
@@ -38,5 +46,7 @@
       <p>Built with focus, code, and consistency.</p>
     </div>
   </footer>
+  
+  <script src="{{ '/assets/js/mobile-nav.js' | relative_url }}"></script>
 </body>
 </html>
