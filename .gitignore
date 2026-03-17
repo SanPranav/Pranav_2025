@@ -25,6 +25,7 @@ Ijava/
 !/Makefile
 !/Gemfile
 !/_notebooks/
+!/_posts/
 !/_includes/
 !/images/
 !/assets/
