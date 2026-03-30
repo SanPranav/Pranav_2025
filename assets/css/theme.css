@@ -627,7 +627,7 @@ body::before {
   min-height: 56px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 12px;
   flex-wrap: nowrap;
   width: 100%;
