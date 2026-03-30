@@ -803,6 +803,7 @@ body::before {
 }
 
 .submenu {
+  display: block;
   width: 100%;
   max-width: 95%;
   margin-left: auto;
@@ -814,7 +815,6 @@ body::before {
   border-radius: 12px;
   padding: 8px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-  float: none;
   clear: both;
   box-sizing: border-box;
 }
