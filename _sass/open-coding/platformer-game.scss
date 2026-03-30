@@ -59,8 +59,10 @@ $spacing-unit: 2rem;
     @include dark-mode-color; // use the dark mode color scheme
     border: none; // remove setting as submenu
     position: fixed;
-    z-index: 3; // Position on Top of other elements, as well as ID buttons above
-    top: $spacing-unit * 1.865; // matches minima ".site-header min-height height", reference: https://github.com/jekyll/minima/blob/master/_sass/minima/_layout.scss
+    z-index: 99; // Position above other elements, below header/nav
+    top: 70px; // Place below the sticky header
+    left: 50%;
+    transform: translateX(-50%);
     width: fit-content;
 
     // Styles for the score and buttons
