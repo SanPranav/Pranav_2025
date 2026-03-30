@@ -43,8 +43,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
-  .site-nav .nav-trigger:checked ~ label + .trigger,
-  .site-nav .nav-trigger:checked + label + .trigger {
+  .site-nav .nav-trigger:checked ~ label ~ .trigger {
     display: flex;
   }
 }
@@ -58,8 +57,10 @@
 
 .page-content table,
 .opencs_root table {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
+  display: inline-table !important;
 }
 
 .page-content table td,

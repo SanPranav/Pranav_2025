@@ -311,11 +311,12 @@ blockquote p {
 /* Tables */
 table {
   border-collapse: collapse;
-  width: 100%;
-  margin: 16px 0;
+  width: auto;
+  margin: 16px auto;
   border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
+  display: inline-table;
 }
 
 table thead {
@@ -348,7 +349,7 @@ table tbody tr:last-child td {
   width: auto;
   max-width: 100%;
   display: inline-table;
-  margin: 10px 0;
+  margin: 10px auto;
   font-size: 0.92rem;
 }
 
