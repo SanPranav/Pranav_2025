@@ -620,6 +620,7 @@ body::before {
   background: rgba(10, 10, 10, 0.88);
   border-bottom: 1px solid rgba(220, 20, 60, 0.45);
   backdrop-filter: blur(10px);
+  width: 100%;
 }
 
 .topbar-inner {
@@ -629,6 +630,7 @@ body::before {
   justify-content: space-between;
   gap: 16px;
   flex-wrap: nowrap;
+  width: 100%;
 }
 
 .site-brand {
@@ -647,6 +649,7 @@ body::before {
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  min-width: 0;
 }
 
 .site-brand-subtitle {
@@ -671,6 +674,8 @@ body::before {
   gap: 8px;
   margin: 0;
   padding: 0;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
 .site-nav-list a {
@@ -680,6 +685,8 @@ body::before {
   line-height: 1;
   font-size: 0.95rem;
   border-bottom: none;
+  min-width: 0;
+  flex-shrink: 0;
 }
 
 .site-nav-list a:hover,
@@ -1074,6 +1081,7 @@ html {
   padding: 8px;
   margin-left: auto;
   z-index: 1002;
+  flex-shrink: 0;
 }
 
 .hamburger-line {
