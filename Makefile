@@ -20,7 +20,8 @@ default: serve-current
 # File watcher - monitors log for file changes and triggers conversion
 watch-files:
 	@echo "Watching for file changes (auto-convert on save)..."
-	@(tail -f $(LOG_FILE) | while read line; do \
+	@touch $(LOG_FILE) 2>/dev/null || mkdir -p /tmp && touch $(LOG_FILE)
+	@(tail -f $(LOG_FILE) 2>/dev/null | while read line; do \
 		if echo "$$line" | grep -q "Regenerating:"; then \
 			echo "$$line"; \
 			echo $$(date +%s) > /tmp/.jekyll_regenerating; \
