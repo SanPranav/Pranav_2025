@@ -369,14 +369,15 @@
             font-weight: bold;
         }
 
-        @media screen and (max-width: fit-content) {
+        @media screen and (max-width: 767px) {
             .site-title {
                 padding-right: 45px;
             }
         }
 
         .site-header .wrapper {
-            max-width: fit-content !important;
+            max-width: 1200px !important;
+            width: calc(100% - 30px);
         }
 
         .site-title,
@@ -441,7 +442,7 @@
             margin-right: 0;
         }
 
-        @media screen and (min-width: 1000px) {
+        @media screen and (min-width: 768px) {
             .site-nav {
                 position: static;
                 float: right;
@@ -509,12 +510,9 @@
                     </a>
                     {%- endif -%}
                     {%- endfor -%}
-                    <a id="loginArea" href="{{ site.baseurl }}/login">Login</a>
                 </div>
             </nav>
             {%- endif -%}
         </div>
     </header>
-
-    <script type="module" src="{{ site.baseurl }}/assets/js/api/login.js"></script>
 </body>

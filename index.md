@@ -227,8 +227,8 @@ image: /images/mario_animation.png
 
   <div class="home-actions">
     <div class="home-action-card">
-      <p>Click the button below to login:</p>
-      <a class="button button-primary" href="{{ site.baseurl }}/myjourney">Login</a>
+      <p>Explore my portfolio pages:</p>
+      <a class="button button-primary" href="{{ site.baseurl }}/navigation/blog">View Blog</a>
     </div>
 
     <div class="home-action-card">

@@ -1,4 +1,17 @@
-from progress.bar import ChargingBar
+try:
+    from progress.bar import ChargingBar
+except ModuleNotFoundError:
+    class ChargingBar:
+        def __init__(self, message="", max=0, suffix=""):
+            self.message = message
+            self.max = max
+            self.suffix = suffix
+
+        def next(self):
+            return
+
+        def finish(self):
+            return
 
 # progress bar to tell how far along the code is
 # configurable title

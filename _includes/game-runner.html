@@ -62,9 +62,8 @@
   if (!container) return;
   
   const hideEdit = {{ include.hide_edit | default: 'false' }};
-  const defaultCode = `{{ include.code }}`.trim();
+  const defaultCode = {{ include.code | jsonify }}.trim();
   const editorHeight = "{{ include.height }}";
-  const levelClasses = `{{ include.levels }}`.trim().split(',').map(s => s.trim()).filter(Boolean);
   const storageKey = container.dataset.storageKey;
   
   // Load code from localStorage or use default
@@ -75,6 +74,8 @@
   
   // Initialize CodeMirror only if not in hide_edit mode
   if (!hideEdit) {
+    const textArea = container.querySelector('.editor-textarea');
+
     // Set CodeMirror height dynamically
     const style = document.createElement('style');
     if (editorHeight && editorHeight !== "") {
@@ -84,14 +85,32 @@
     }
     document.head.appendChild(style);
 
-    // Initialize CodeMirror
-    editor = CodeMirror.fromTextArea(container.querySelector('.editor-textarea'), {
-      mode: 'javascript',
-      theme: 'darcula',
-      lineNumbers: true,
-      value: initialCode
-    });
-    editor.setValue(initialCode);
+    if (typeof CodeMirror !== 'undefined') {
+      // Initialize CodeMirror when available
+      editor = CodeMirror.fromTextArea(textArea, {
+        mode: 'javascript',
+        theme: 'darcula',
+        lineNumbers: true,
+        value: initialCode
+      });
+      editor.setValue(initialCode);
+    } else {
+      // Fallback: plain textarea editor so runner still works without CodeMirror assets
+      textArea.style.display = 'block';
+      textArea.value = initialCode;
+      editor = {
+        getValue: () => textArea.value,
+        setValue: (value) => {
+          textArea.value = value;
+        },
+        on: (eventName, callback) => {
+          if (eventName === 'change') {
+            textArea.addEventListener('input', callback);
+          }
+        },
+        setOption: () => {}
+      };
+    }
   }
 
   // Get UI elements

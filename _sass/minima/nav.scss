@@ -1,39 +1,70 @@
 // Navigation and logo styles for site header
 
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-title {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .site-nav .trigger {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  right: 0;
-  top: 60px; /* adjust as needed */
-  width: 200px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: row;
+  position: static;
+  width: auto;
+  box-shadow: none;
   z-index: 1000;
 }
 
-.site-nav .nav-trigger:checked ~ label + .trigger,
-.site-nav .nav-trigger:checked + label + .trigger {
-  display: flex;
+.site-nav .menu-icon,
+.site-nav label[for="nav-trigger"] {
+  display: none;
 }
 
-@media (min-width: 600px) {
-  .site-nav .trigger {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    background: none;
-    box-shadow: none;
-    width: auto;
+@media (max-width: 767px) {
+  .site-nav .menu-icon,
+  .site-nav label[for="nav-trigger"] {
+    display: block;
   }
-}
 
-#loginArea.page-link {
-  /* Add any custom login link styles here */
-  opacity: 1;
+  .site-nav .trigger {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 220px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .site-nav .nav-trigger:checked ~ label + .trigger,
+  .site-nav .nav-trigger:checked + label + .trigger {
+    display: flex;
+  }
 }
 
 #site-logo {
   height: 40px;
+  display: block;
   vertical-align: middle;
-  margin-right: 10px;
+  margin-right: 0;
+}
+
+.page-content table,
+.opencs_root table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-content table td,
+.page-content table th,
+.opencs_root table td,
+.opencs_root table th {
+  text-align: center;
 }

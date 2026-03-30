@@ -1,4 +1,4 @@
-<div class="submenu submenu--compact" role="navigation" aria-label="Home quick links">
+<div class="submenu submenu--compact home-games-nav" role="navigation" aria-label="Home quick links">
   <div class="submenu-container">
     <div class="submenu-item submenu-logo">
       <img src="{{ site.baseurl }}/images/logo.png" height="40" title="Home" alt="Home logo">
@@ -9,3 +9,34 @@
     <div class="submenu-item"><a href="{{site.baseurl}}/2024/09/15/snakegame.html">Snake Game</a></div>
   </div>
 </div>
+
+<style>
+  .home-games-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .home-games-nav .submenu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 980px;
+  }
+
+  .home-games-nav .submenu-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 767px) {
+    .home-games-nav .submenu-container {
+      justify-content: center;
+      gap: 0.4rem;
+    }
+  }
+</style>

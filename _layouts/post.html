@@ -266,8 +266,7 @@ Check if this is a course lesson and determine which course context to use
   </div>
 </div>
 
-<script type="module">
-  import { pythonURI, fetchOptions } from '{{ site.baseurl }}/assets/js/api/config.js';
+<script>
 
   // Course is now determined by the specific file being viewed
   const CURRENT_COURSE = '{{ current_course }}';
@@ -625,86 +624,7 @@ Check if this is a course lesson and determine which course context to use
     initMobileEnhancements();
   });
 
-  // --- Assignment Submission Logic ---
-
-  // NOTE: This getUid function is duplicated from admin_foundation.html logic
-  async function getUid() {
-    try {
-      const res = await fetch(`${pythonURI}/api/id`, {
-        ...fetchOptions,
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json"
-        },
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        // The previous code returned role, but here we need uid. 
-        // Assuming /api/id returns { uid: "...", role: "..." }
-        const uid = data.uid;
-        return uid;
-      } else {
-        console.log(`Request failed with status ${res.status}`);
-        return null;
-      }
-    } catch (err) {
-      console.log(`Error: ${err}`);
-      return null;
-    }
-  }
-
-  const fileToBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        let encoded = reader.result.toString().replace(/^data:(.*,)?/, '');
-        if ((encoded.length % 4) > 0) {
-          encoded += '='.repeat(4 - (encoded.length % 4));
-        }
-        resolve(encoded);
-      };
-      reader.onerror = error => reject(error);
-    });
-  };
-
-  async function submitAssignment(submissionData) {
-    try {
-      const uid = await getUid();
-      if (!uid) {
-        showStatus('error', 'Authentication failed. Please log in.');
-        return false;
-      }
-
-      const payload = {
-        uid: uid,
-        title: pageTitle,
-        class: CURRENT_COURSE,
-        ...submissionData
-      };
-
-      const res = await fetch(`${javaURI}/api/grades`, { 
-        ...fetchOptions,
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
-
-      if (res.ok) {
-        return true;
-      } else {
-        console.error('Submission failed', res);
-        return false;
-      }
-
-    } catch (err) {
-      console.error('Error submitting assignment:', err);
-      return false;
-    }
-  }
+  // --- Assignment Submission Logic (local-only, no login/backend required) ---
 
   // Helper for status display (moved to global scope for module access or re-use)
   function showStatus(type, message) {
@@ -819,78 +739,6 @@ Check if this is a course lesson and determine which course context to use
       return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
     }
 
-    // Form submission
-    const linkForm = document.getElementById('link-form');
-    if (linkForm) {
-      linkForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const link = document.getElementById('submission-link').value;
-        const description = document.getElementById('link-description').value;
-
-        // Prepare payload for link submission
-        const submissionData = {
-          notes: description,
-          link: link
-          // uploads is empty or undefined
-        };
-
-        const success = await submitAssignment(submissionData);
-
-        if (success) {
-          saveSubmission('link', { link, description }); // Keeping local save for backup/reference if needed
-          showStatus('success', 'Link submitted successfully to server!');
-          this.reset();
-        } else {
-          showStatus('error', 'Failed to submit link. Please try again.');
-        }
-      });
-    }
-
-    const fileForm = document.getElementById('file-form');
-    if (fileForm) {
-      fileForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const notes = document.getElementById('file-notes').value;
-
-        // Convert files to base64
-        const uploads = [];
-        for (const file of selectedFiles) {
-          try {
-            const base64Content = await fileToBase64(file);
-            uploads.push({
-              file: base64Content,
-              filename: file.name
-            });
-          } catch (err) {
-            console.error("Error encoding file:", file.name, err);
-            showStatus('error', `Error reading file ${file.name}`);
-            return;
-          }
-        }
-
-        // Prepare payload for file submission
-        const submissionData = {
-          notes: notes,
-          uploads: uploads
-          // link is empty or undefined
-        };
-
-        const success = await submitAssignment(submissionData);
-
-        if (success) {
-          const fileNames = selectedFiles.map(f => f.name);
-          saveSubmission('file', { files: fileNames, notes });
-
-          showStatus('success', `${selectedFiles.length} file(s) submitted successfully to server!`);
-          selectedFiles = [];
-          updateFileList();
-          this.reset();
-        } else {
-          showStatus('error', 'Failed to submit files. Please try again.');
-        }
-      });
-    }
-
     function saveSubmission(type, data) {
       const submissions = JSON.parse(localStorage.getItem('assignment-submissions') || '{}');
       const lessonId = window.location.pathname;
@@ -901,11 +749,42 @@ Check if this is a course lesson and determine which course context to use
 
       submissions[lessonId].push({
         type,
+        course: CURRENT_COURSE,
+        title: pageTitle,
         data,
         timestamp: new Date().toISOString()
       });
 
       localStorage.setItem('assignment-submissions', JSON.stringify(submissions));
+    }
+
+    // Form submission
+    const linkForm = document.getElementById('link-form');
+    if (linkForm) {
+      linkForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const link = document.getElementById('submission-link').value;
+        const description = document.getElementById('link-description').value;
+
+        saveSubmission('link', { link, description });
+        showStatus('success', 'Link saved locally.');
+        this.reset();
+      });
+    }
+
+    const fileForm = document.getElementById('file-form');
+    if (fileForm) {
+      fileForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const notes = document.getElementById('file-notes').value;
+        const fileNames = selectedFiles.map(f => f.name);
+
+        saveSubmission('file', { files: fileNames, notes });
+        showStatus('success', `${selectedFiles.length} file(s) saved locally.`);
+        selectedFiles = [];
+        updateFileList();
+        this.reset();
+      });
     }
   }
 </script>

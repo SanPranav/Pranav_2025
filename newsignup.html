@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Signup</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        body {
+            background: var(--greyLight-1);
+            color: white;
+            font-family: "Poppins", sans-serif;
+        }
+        .signup-container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        .signup-form {
+            max-width: 500px;
+            width: 100%;
+            background: var(--greyLight-2);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+        }
+        .signup-form h1 {
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--greyDark);
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 0.5rem;
+            background: var(--greyLight-1);
+            color: white;
+            font-size: 1rem;
+        }
+        .form-group input:focus {
+            outline: none;
+            box-shadow: 0 0 0.3rem var(--primary);
+        }
+        .btn {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-form">
+            <h1>Newsletter Signup</h1>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn__primary">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
