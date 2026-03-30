@@ -628,6 +628,7 @@ body::before {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  flex-wrap: nowrap;
 }
 
 .site-brand {
@@ -635,6 +636,10 @@ body::before {
   flex-direction: column;
   gap: 3px;
   text-decoration: none;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 300px;
 }
 
 .site-brand-title {
@@ -656,6 +661,7 @@ body::before {
   padding: 0;
   margin: 0;
   position: static;
+  flex-shrink: 0;
 }
 
 .site-nav-list {
@@ -1181,6 +1187,10 @@ html {
     padding-top: 8px;
     padding-bottom: 8px;
     gap: 10px;
+  }
+
+  .site-brand {
+    max-width: 200px;
   }
 
   .site-brand-title {
