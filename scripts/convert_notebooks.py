@@ -77,6 +77,19 @@ def fix_js_code_blocks(markdown):
     return markdown
 
 
+def fix_java_code_blocks(markdown):
+    # This regex finds ```python blocks containing Java code patterns and converts to ```java
+    # Java patterns: public class, public static, System.out, etc.
+    pattern = re.compile(r"```python\n((?:[^\n]*(?:public\s+(?:static\s+)?class|void\s+main|System\.out|\.main\s*\(\s*null|import\s+java\.|private\s+int|private\s+int\s+\w+\s*=)[^\n]*\n){1}.*?)```", re.MULTILINE | re.DOTALL)
+    
+    def replace_block(match):
+        block_content = match.group(1)
+        return f"```java\n{block_content}```"
+    
+    markdown = pattern.sub(replace_block, markdown)
+    return markdown
+
+
 def extract_code_runner_metadata(cell_source, language):
     """Extract CODE_RUNNER challenge from cell comments"""
     if language not in CODE_RUNNER_PATTERNS:
@@ -587,7 +600,8 @@ def convert_notebook_to_markdown_with_front_matter(notebook_file):
         process_mermaid_cells(notebook)
         exporter = MarkdownExporter()
         markdown, _ = exporter.from_notebook_node(notebook)
-        markdown = fix_js_code_blocks(markdown) # Fix JS code blocks
+        markdown = fix_js_code_blocks(markdown)  # Fix JS code blocks
+        markdown = fix_java_code_blocks(markdown)  # Fix Java code blocks
         
         # Inject code-runner includes (and submit buttons if challenge_submit is enabled)
         markdown = inject_code_runners(markdown, notebook, front_matter)
