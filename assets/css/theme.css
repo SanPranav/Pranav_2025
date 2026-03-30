@@ -624,38 +624,17 @@ body::before {
 }
 
 .topbar-inner {
-  min-height: 72px;
+  min-height: 56px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: flex-end;
+  gap: 12px;
   flex-wrap: nowrap;
   width: 100%;
+  padding: 0 16px;
 }
 
-.site-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  text-decoration: none;
-  flex-shrink: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 300px;
-}
-
-.site-brand-title {
-  color: var(--text-primary);
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  min-width: 0;
-}
-
-.site-brand-subtitle {
-  color: var(--text-secondary);
-  font-size: 0.83rem;
-}
+/* Site brand removed - keeping navbar clean and functional */
 
 .site-nav {
   background: transparent;
@@ -1190,20 +1169,7 @@ html {
     padding-left: 16px;
   }
 
-  .topbar-inner {
-    min-height: auto;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    gap: 10px;
-  }
-
-  .site-brand {
-    max-width: 200px;
-  }
-
-  .site-brand-title {
-    font-size: 0.95rem;
-  }
+  /* Site brand styles removed */
 
   .site-brand-subtitle {
     font-size: 0.75rem;
@@ -1251,19 +1217,7 @@ html {
     padding-right: 0;
   }
 
-  .topbar-inner {
-    min-height: auto;
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-
-  .site-brand-title {
-    font-size: 0.9rem;
-  }
-
-  .site-brand-subtitle {
-    display: none;
-  }
+  /* Site brand styles removed */
 
   .site-nav {
     width: 260px;
