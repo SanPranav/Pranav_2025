@@ -44,73 +44,7 @@ header {
   box-shadow: 0 4px 12px rgba(220, 20, 60, 0.2);
 }
 
-.site-header {
-  background: transparent;
-  border-bottom: none;
-  padding: 0;
-  margin-bottom: 0;
-}
-
-.site-title {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--text-primary);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.site-title:hover {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.site-nav {
-  background-color: var(--bg-secondary);
-  border-bottom: 2px solid var(--primary);
-  padding: 0;
-  margin: 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.site-nav .wrapper {
-  padding: 0 20px;
-}
-
-.site-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.site-nav li {
-  margin: 0;
-  padding: 0;
-}
-
-.site-nav a {
-  color: var(--text-primary);
-  padding: 15px 20px;
-  display: block;
-  text-decoration: none;
-  border-bottom: 3px solid transparent;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.site-nav a:hover,
-.site-nav a.active {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
-  background-color: rgba(220, 20, 60, 0.08);
-}
+/* OLD MINIMA STYLES REMOVED - Using new theme/minima/base.html structure */
 
 /* Main Content */
 .page-content {
