@@ -1,145 +1,70 @@
-// Navigation and logo styles for site header
+// Navigation styles - Custom structure with .site-topbar, .site-nav, .mobile-menu-toggle
+// This targets the custom navbar structure in _includes/theme/minima/base.html
+// Not the default minima theme structure
 
-.site-header .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.site-title {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-// Hide checkbox input
-.site-nav .nav-trigger {
-  display: none;
-}
-
-// Mobile-first: hide menu by default
-.site-nav .menu-icon,
-.site-nav label[for="nav-trigger"] {
-  display: none;
-}
-
-.site-nav .trigger {
+// Desktop: Navigation always visible inline
+.site-nav .site-nav-list {
   display: flex;
   flex-direction: row;
-  width: auto;
-  box-shadow: none;
-  z-index: 1000;
-  padding: 0;
+  list-style: none;
   margin: 0;
+  padding: 0;
+  gap: 0;
 }
 
-.site-nav .page-link {
+.site-nav .site-nav-list li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav .site-nav-list a {
   display: inline-block;
   padding: 12px 16px;
   text-decoration: none;
   color: inherit;
-  border-bottom: none;
+  transition: color 0.2s ease;
 }
 
-// ===== MOBILE LAYOUT (max-width: 767px) =====
-@media screen and (max-width: 767px) {
-  // Show hamburger menu
-  .site-nav .menu-icon {
-    display: block;
-    width: 36px;
-    height: 26px;
-    line-height: 0;
-    padding-top: 10px;
-    text-align: center;
-  }
+.site-nav .site-nav-list a:hover {
+  color: #dc143c;
+}
 
-  .site-nav .menu-icon svg path {
-    fill: #fff;
-  }
-
-  // Make label clickable
-  .site-nav label[for="nav-trigger"] {
-    display: block;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    z-index: 2;
-  }
-
-  // Hide trigger menu by default
-  .site-nav .trigger {
-    display: none;
+// Mobile: Hide nav by default, show only when .active class is present
+// This is controlled by mobile-nav.js
+@media screen and (max-width: 879px) {
+  .site-nav .site-nav-list {
     flex-direction: column;
-    position: absolute;
-    right: 0;
-    top: 60px;
-    width: 100%;
-    max-width: 280px;
-    background: rgba(50, 50, 50, 0.95);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    padding: 10px 0;
-    margin: 0;
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    z-index: 1000;
+    background: rgba(30, 30, 30, 0.98);
+    border-left: 2px solid #dc143c;
+    padding: 80px 0 20px 0;
+    transition: right 0.3s ease;
   }
 
-  // Show trigger when checkbox is checked
-  .site-nav .nav-trigger:checked ~ label ~ .trigger {
-    display: flex;
-  }
-
-  // Mobile page links
-  .site-nav .page-link {
+  .site-nav .site-nav-list li {
     display: block;
-    padding: 14px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(220, 20, 60, 0.2);
+    width: 100%;
   }
 
-  .site-nav .page-link:last-child {
-    border-bottom: none;
-  }
-}
-
-// ===== DESKTOP LAYOUT (min-width: 768px) =====
-@media screen and (min-width: 768px) {
-  // Hide hamburger menu on desktop
-  .site-nav .menu-icon,
-  .site-nav label[for="nav-trigger"] {
-    display: none;
+  .site-nav .site-nav-list a {
+    display: block;
+    padding: 15px 20px;
   }
 
-  // Always show trigger on desktop
-  .site-nav .trigger {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    width: auto;
-    max-width: none;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  // Desktop page links inline
-  .site-nav .page-link {
-    display: inline-block;
-    padding: 15px 16px;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
-  }
-
-  .site-nav .page-link:hover {
-    border-bottom-color: #dc143c;
+  // When .active class is on .site-nav, slide menu in from right
+  .site-nav.active .site-nav-list {
+    right: 0;
   }
 }
 
-#site-logo {
-  height: 40px;
-  display: block;
-  vertical-align: middle;
-  margin-right: 0;
-}
-
+// Table centering
 .page-content table,
 .opencs_root table {
   margin-left: auto !important;
