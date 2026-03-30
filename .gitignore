@@ -18,14 +18,3 @@ vendor/bundle/
 ijava-1.3.0.zip
 ijava.zip
 Ijava/
-
-# Ignore everything except the tracked notebook
-/*
-!/.gitignore
-!/Makefile
-!/Gemfile
-!/_notebooks/
-!/_posts/
-!/_includes/
-!/images/
-!/assets/
